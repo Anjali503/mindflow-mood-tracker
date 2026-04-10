@@ -1,0 +1,54 @@
+--- TEST START ---
+[DataService] getOrCreateUser called 
+[DataService] User found {
+  "id": "17d092a9-e011-4e82-885f-a4b774e9df2d",
+  "email": "local@mindflow.app",
+  "name": null,
+  "createdAt": "2026-04-07T13:59:46.867"
+}
+User: 17d092a9-e011-4e82-885f-a4b774e9df2d
+[DataService] createMoodEntry entry start {
+  "userId": "17d092a9-e011-4e82-885f-a4b774e9df2d",
+  "mood": "happy",
+  "moodScore": 4,
+  "moodEmoji": "😊",
+  "tagsJson": "[\"test\"]",
+  "journalNote": "Test note",
+  "date": "2026-04-07"
+}
+[DataService] createMoodEntry inserting payload {
+  "userId": "17d092a9-e011-4e82-885f-a4b774e9df2d",
+  "mood": "happy",
+  "moodScore": 4,
+  "moodEmoji": "😊",
+  "tagsJson": "[\"test\"]",
+  "journalNote": "Test note",
+  "date": "2026-04-07",
+  "id": "5b03ee61-cfcb-4cff-9bec-1277288a7ab7",
+  "createdAt": "2026-04-07T15:59:04.214Z"
+}
+[DataService] CRITICAL: Error creating mood entry in Supabase: {
+  code: 'PGRST204',
+  details: null,
+  hint: null,
+  message: "Could not find the 'journalNote' column of 'mood_entries' in the schema cache"
+}
+[DataService] Payload was: {
+  userId: '17d092a9-e011-4e82-885f-a4b774e9df2d',
+  mood: 'happy',
+  moodScore: 4,
+  moodEmoji: '😊',
+  tagsJson: '["test"]',
+  journalNote: 'Test note',
+  date: '2026-04-07',
+  id: '5b03ee61-cfcb-4cff-9bec-1277288a7ab7',
+  createdAt: '2026-04-07T15:59:04.214Z'
+}
+[DataService] Error details: Could not find the 'journalNote' column of 'mood_entries' in the schema cache null
+--- TEST FAILED ---
+{
+  code: 'PGRST204',
+  details: null,
+  hint: null,
+  message: "Could not find the 'journalNote' column of 'mood_entries' in the schema cache"
+}

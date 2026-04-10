@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #05050d;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-muted: rgba(226, 232, 240, 0.65);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[var(--bg-deep)] text-slate-100 antialiased;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mindflow-grid {
+    background-image: theme("backgroundImage.grid-fade");
+    background-size: 72px 72px;
+    background-position: center;
+  }
+}
